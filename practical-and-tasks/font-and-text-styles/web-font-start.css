@@ -1,0 +1,59 @@
+/* General setup */
+
+html {
+  font-size: 10px;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Typography */
+
+h1 {
+  font-size: 3.2rem;
+  font-family: 'Florante at Laura', serif;
+}
+
+
+
+h2 {
+  font-size: 2.4rem;
+
+}
+
+ .first {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  word-spacing: 0.6rem;
+  font-family: 'Spirax';
+}
+
+ p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  word-spacing: 0.6rem;
+
+}
+
+@font-face {
+    font-family: 'Florante at Laura';
+    src: url('/fonts/FloranteatLauraItalic.woff2') format('woff2'),
+        url('/fonts/FloranteatLauraItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spirax';
+    src: url('/fonts/Spirax-Regular.woff2') format('woff2'),
+        url('/fonts/Spirax-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

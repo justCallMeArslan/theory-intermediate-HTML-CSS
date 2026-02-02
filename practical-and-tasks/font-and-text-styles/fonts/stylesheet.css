@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Spirax';
+    src: url('Spirax-Regular.woff2') format('woff2'),
+        url('Spirax-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Florante at Laura';
+    src: url('FloranteatLaura.woff2') format('woff2'),
+        url('FloranteatLaura.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Florante at Laura';
+    src: url('FloranteatLauraItalic.woff2') format('woff2'),
+        url('FloranteatLauraItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
