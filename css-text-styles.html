@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>More text styles</title>
 </head>
+
 <body>
-    
+
+    Fonts can be:
+    1. system font stack - system based vanilla fonts
+    2. web fonts - fonts which downloaded on home machine from web
+    3. online font libraries - google fonts, font library and etc
+    4. self-hosted fonts - downloaded and available on machine, using @font-face
+
+    @font-face {
+    font-family: my-cool-font;
+    src: url(../fonts/the-font-file.woff);
+    }
+
+    Text styles
+
+    1. font-style is used to make text italic/bold/etc. - CSS property to highlight text, however
+    em, strong - used to do the same as font-style , but they have additional purpose to emphasize
+    text.
+    2 . letter-spacing is used to change the space between leters in a word. Can be used to adjust
+    fonts as well.
+    3. line-height is usedto adjust space betwee lines in wrapped text. Good to increase readability.
+    4. text-transform is used to change the case of given text (Upper or Lower or mixed)
+    5. text-shadow is used to add shadow arouhnd the text in the selected element.
+    6. elipsis - not a single property, but group of. With text-overflow it is possible to truncate
+    overflowing text with an elipsis.
+
+    Font loading - how fast fonts loaded for webpage (Dev Tools -> Network -> Timing)
+
+
+    @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2");
+    unicode-range: U+0025-00FF; // - can limit number of characters downloaded for specified font,
+    in other words it will only download used on webpage characters of specified font
+    }
+
+
+    font-display - used to inform browser how it should proceed with text rendering, helping 
+    transition to a custom font, values are:
+
+    Value     Block period       Swap period
+    Auto      Varies by browser  Varies by browser
+    Block     2-3 seconds        Infinite
+    Swap      0ms                Infinite
+    Fallback  100ms              3 seconds
+    Optional  100ms              None
+
+    They have different purposes and different usage:
+
+    for performance - font-display: optional,
+    for quickly display  - font-display: swap,
+    for text displayed in a web font - font-display: block.
+
+    these two approaches can be combined: for example, use font-display: swap for branding and 
+    other visually distinctive page elements. Use font-display: optional for fonts used in body text.
+
+    line-length can be set by 
+    article {
+    max-inline-size: 66ch;
+    }
+
+    clamp() function - allows locking the font size between sensible minimums and maximums while also 
+    providing a scalable middle value. Exactly, prevent too small or too large text, while also 
+    providing a smooth scaling font size.
+
+    html {  
+    font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem); // example
+    }
 </body>
+
 </html>
