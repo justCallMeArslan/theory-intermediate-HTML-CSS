@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Units</title>
 </head>
+
 <body>
+    There are absolute and relative units in CSS.
+    Absolute are the ones that always the same. For web its 'px'.
+
+    Relative are the ones that can be changed based on their context:
+    1. em/rem (rem prefferable). 1em = 16px
+    2. viewport units.
+    1 vh = 1% - viewport width
+    1 vh = 1% - viewport height
+    1 vmin = 1% - a percentage of vw or vh, whichever is smaller.
+    1 vmax = 1% - a percentage of vw or vh, whichever is higher.
+    same as em/rem/px these viewport units can be used in multiple places.
+
+    there is a good use in responsive typography - combine viewport values and px, to reduce too
+    drastic change of things by only using viewport values, its handled by calc(), as example
+    calc(16px + 1 vw).
+
+
+    Piece of advice is to use rem (root) for font-size and the rest px, but em/rem usage is possible.
+
+  
+    Text scaling & accessibility - `rem` 
+    Component-relative sizing - `em` 
+    Full-screen / viewport layouts - `vh` / `vw`
+    Pixel-perfect details and exact visual control - `px`
+
+    hero image/layout - is a huge image/part of layout containing image/banner used as design 
+    method to style webpage, it creates glimpse of what your business offers 9some sort of trick to 
+    emphasize on service or product.
     
+
 </body>
+
 </html>
