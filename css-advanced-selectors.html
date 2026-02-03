@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced selectors</title>
+</head>
+
+<body>
+
+    <main class="parent">
+        <div class="child group1">
+            <div class="grand-child group1"></div>
+        </div>
+        <div class="child group2">
+            <div class="grand-child group2"></div>
+        </div>
+        <div class="child group3">
+            <div class="grand-child group3"></div>
+        </div>
+    </main>
+
+
+
+    // Child and sibling selectors:
+    > - the child combinator (helps us to select only direct children, one indentation down)
+
+    <style>
+        main>div {
+            /* targeting "child" class div only */
+            color: black;
+        }
+
+        main>div>div {
+            /*  targeting "grand-child" class div only */
+            color: black;
+        }
+    </style>
+
+    + - the adjacent combinator (helps us target elements immediately following or on the same level of indentation)
+
+    <style>
+        .group1+div {
+            /* targeting "child group2" class div only */
+            color: black;
+        }
+
+        .group1+div+div {
+            /*  targeting "child group3" class div only */
+            color: black;
+        }
+    </style>
+
+    ~ - the genral sibling combinator (helps to target all of the siblings following an element)
+
+    <style>
+        .group~div {
+            /* in the case above it will target "2nd and 3rd childe divs" */
+
+            color: black;
+
+        }
+    </style>
+
+
+    // Pseudo-selectors are pseudo-classes and pseudo-elements.
+
+    // Pseudo-classes (0,0,1,0) offer us a different way to target elements in HTML.
+
+
+    // dynamic and user action pseudo classes - they make page feel much more dynamic and interactive:
+
+    :focus - applies to element selected by the user. basically it applies effect when user navigates or clicks on
+    elemen (e.g .lime-input:focus {color: lime;} , which will paint text to lime color when we click on this element)
+    :hover - affects anything under the user's cursor.
+    :active - applies to element that currently being clicked, creates 'tactile' feedback.
+    :link and :visited - change when link was/or wasnt yet used by user.
+
+
+    // structural pseudo-classes - useful way to select elements based on their position within DOM.
+
+    :root is a special class representing very top of document and has o parents. its a place for 'global CSS'.
+    :first-child and :last-child will match elements that are first or last sibling.
+    :empty - match element with no children.
+    :only-child - match elements with no siblings.
+    :nth-child - flexible class for dynamic approach, with few different uses:
+
+    <style>
+        .myList:nth-child(5) {
+            /* Selects the 5th element with class myList */
+            color: black;
+        }
+
+        .myList:nth-child(3n) {
+            /* Selects every 3rd element with class myList */
+            color: black;
+        }
+
+        .myList:nth-child(3n + 3) {
+            /* Selects every 3rd element with class myList, beginning with the 3rd */
+            color: black;
+        }
+
+        .myList:nth-child(even) {
+            /* Selects every even element with class myList */
+            color: black;
+        }
+    </style>
+
+
+
+    // Pseudo-elements (0,0,0,1) - allows to affect part of HTML which ae not elements.
+
+        ::marker - allows to customize bullets or numbers in <li>
+        ::first-letter and ::first line allowa to style first letter or line of some text
+        ::selection allows to change the highlighting when user selects text on a page
+        ::before and ::after allow to add extra elements on the page with CSS. Using to decorate text is main use.
+
+
+    // Attribute selectors (0,0,1,0) - allows to target attributes, such as src="", type ="", etc..
+
+        [attribute] - general selector will select anything where the given attribute exists.
+        selector[attribute] - the way to combine attiribute selector and other types of selectors
+        [attribute="value"] - allows to track specific attribute.
+
+        <style>
+            [src] {
+                /* This will target any element that has a src attribute. */
+                color: black;
+            }
+
+            img[src] {
+                /* This will only target img elements that have a src attribute. */
+                color: black;
+            }
+
+            img[src="puppy.jpg"] {
+                /* This will target img elements with a src attribute that is exactly "puppy.jpg" */
+                color: black;
+            }
+        </style>
+
+        to be even more precise we can use:
+
+    [attribute^="value"] - ^= match strings from the start.
+    [attribute$="value"] - $= match strings from the end.
+    [attribute*="value"] - *= The wildcard selector will match anywhere inside the string.
+
+
+        <style>
+            [class^='aus'] {
+            /* Classes are attributes too!
+            This will target any class that begins with 'aus':
+            class='austria'
+            class='australia'
+          */
+          color: black;
+        }
+        
+            [src$='.jpg'] {
+            /* This will target any src attribute that ends in '.jpg':
+            src='puppy.jpg'
+            src='kitten.jpg'
+          */
+          color: black;
+        }
+        
+            [for*='ill'] {
+            /* This will target any for attribute that has 'ill' anywhere inside it:
+            for="bill"
+            for="jill"
+            for="silly"
+            for="ill"
+          */
+          color: black;
+        }
+        </style>
+
+
+
+
+
+
+</body>
+
+</html>
