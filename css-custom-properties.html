@@ -1,11 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom properties</title>
 </head>
+
 <body>
-    
+
+    // Syntax of custom properties doesnt differ too much from normal rule declarations:
+
+    <style>
+        .error-modal {
+            --color-error-text: red;
+            --modal-border: 1px solid black;
+            --modal-font-size: calc(2rem + 5vw);
+            color: var(--color-error-text);
+            border: var(--modal-border);
+            font-size: var(--modal-font-size);
+        }
+    </style>
+
+    first we declare what we want to see in custom property, and hen we set it to be applied.
+    custom properties pass inheritance to all children unless @property used to prevent that 
+    behavior.
+
+
+    // Fallback values
+
+    the var() function accepts two parameters, first is property itself, while second being
+    optional fallback value, which will be used if custom properrty is invalid or hasnt been
+    declared yet. it is possible to pass another property containing its own fallback as a
+    fallback:
+
+    <style>
+        .fallback {
+            --color-text: white;
+            background-color: var(--undeclared-property, black);
+            color: var(--undeclared-again, var(--color-text, yellow));
+        }
+    </style>
+
+
+    // Scope
+
+    custom properties's scope works more or less like JS scope, so we can access custom properties of
+    selector we target and all his descending elements.
+    in example below only .cool-paragraph will be
+    painted red as its nested in (decendant of) .cool-div, in which custom property declared.
+
+    <div class="cool-div">
+        <p class="cool-paragraph">In scope</p>
+    </div>
+
+    <p class="boring-paragraph">Out of score for .cool-div</p>
+
+    <style>
+        :root {
+            --custom-bg: blue;
+        }
+
+        .cool-div {
+            --main-bg: red;
+
+            background-color: var(--custom-bg);
+        }
+
+        .cool-paragraph {
+            background-color: var(--main-bg);
+        }
+
+        .boring-paragraph {
+            background-color: var(--main-bg);
+            background-color: var(--custom-bg);
+
+        }
+    </style>
+
+
+    // :root selector
+
+    declaring custom properties into :root will allow to use anywhere within CSS, as they all will be
+    treated as descendants of :root, which is basically the top of hierarchy. in example above we set
+    custom property for :root and it can be used anywhere.
+
+
+    // Creating themes with custom properties 
+
+    themes can be set using custom properties, but aslo by using @media and prefers-color-scheme, 
+    which let's apply differets styles based on user device or browser chosen theme. Few notes:
+    - only light and dark theme available through the media query. 
+    - light values is for the query when user has light theme on devie or browser or when 
+    no preference set.
+    - it doesnt allow user to choose them by himself, which can be annoying for some.
+
 </body>
+
 </html>
