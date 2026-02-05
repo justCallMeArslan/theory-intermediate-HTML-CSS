@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS functions</title>
 </head>
+
 <body>
+
+    // CSS functions are reusable pieces of code which perform specific tasks.
+    // calc() allows to mix units and has abiliy to nest calc (calc() - calc())
+
+
+    // min() takes a list of values separated by commas and returns the smallest one, also
+    allows us to do basic math, without using calc():
+
+    width: min(80ch, 100vw - 2rem),
+
+    where first elememt is basic default value, which checks against second vslue, if second value 
+    less than first it will take it for default size, if second value more than first - value of 
+    first will be used as default.
+
+
+    // max() compares all values and returns the largest one. 
+
+    width:max(100px, 4em, 50%) - largest will be used as default. Great tool for accessibility.
+
+
+    // clamp() is a great way to make elements fluid and responsive. It takes 3 values:
+
+    h1 {
+        font-size: clamp(1.5rem, 5vw, 3rem);
+    }
+    
+    first - minimum value is 1.5rem,
+    second - scaling value 5vw,
+    third - maximum value 3rem
+
     
 </body>
+
 </html>
