@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Basic</title>
+</head>
+
+<body>
+
+    // The form element
+
+    Its a container element like the div element we learned earlier in the curriculum, the form
+    element wraps all of the inputs the user will interact with on form.
+
+    the form takes two attributes: action and method
+    - action is attribute which takes a URL value that tells the form where it should send its data
+    to be processed.
+    - method is attribute which tells browser what HTTP protocol request method it should use to
+    submit the form (GET and POST used the most).
+    GET method used to retrieve information from a server (e.g Google search query);
+    POST is used when we want to chage something on the server, e.g. when a user makes an account or
+    makes a payment on a website.
+
+    Basic markup is:
+    <form action="google.com/path" method="post"></form>
+
+
+    // The input element
+
+    Its the most versatile of all the form control elements. It accepts type attriibute which tells
+    the browser what type of data it should expect and how it should render the input element.
+
+    A text input looks like:
+
+    <form action="google.com/path" method="post">
+        <input type="text"> //used to collect any text data, such user login and password.
+    </form>
+
+    // label attribute
+
+    used to provide user with a guidance on waht information it shoud provide in input window
+
+    <form action="google.com/path" method="post">
+        <label for="first_name">First name:</label> //expected text is first name of user
+        <input type="text" id="first_name">
+    </form>
+
+    <label> </label> for="" attribute which associates with particular input, requiring id=""
+    attribute with the same value as for"". this manipulation will make a form more accessible to
+    user as it will focus cursor on the input, ready for input data.
+
+    // name attribute
+
+    name = "" is used to provide server with information on what piece of data we send to it.
+
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name">
+
+    name = "" attribute serves as reference to the data inputted into a form control after submit.
+    if there is no name ="" in form input, it will be ignored when form is submitted.
+
+    <br><br>
+    <form action="https://httpbin.org/post" method="post">
+        <div>
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name">
+        </div>
+
+        <div>
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name">
+        </div>
+
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age">
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    // type attribute
+
+    email inputs are specialized text inputs for email addresses.
+
+    password inputs are also specialized. they hide input with * to prevent seeing of what was entered.
+
+    number inputs only accept number values and ignores any other type of characters.
+
+    date inputs provide with option to collect specific date.
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
+
+</body>
+
+</html>
