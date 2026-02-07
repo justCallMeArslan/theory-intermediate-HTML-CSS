@@ -95,7 +95,7 @@
     <input type="date" id="dob" name="dob">
 
 
-    // Text area 
+    // Text area
 
     It provides an input box that can accept text that spans multiple lines like user comments and
     reviews, easy to rescale with end-bottom dragging.
@@ -106,6 +106,109 @@
 
 
     // Selection elements
+
+    // basic syntax for selection is:
+    <br><br>
+    <select>
+
+        <optgroup> // used to split groups with different choice or values
+            <option value="">Options you want to give</option>
+            <option value="" selected>Another option</option> // selected marks default option
+        </optgroup>
+        <optgroup>
+            <option value="">Options you want to give</option>
+            <option value="">Another option</option>
+        </optgroup>
+    </select>
+
+    // radio buttons
+
+    useful when choice limited to 5 or fewer options.
+    syntax as following:
+    <br><br>
+    <h1>Vegetables to buy</h1>
+    <div>
+        <input type="radio" id="greens" name="vegetables" value="greens">
+        <label for="greens">Greens</label>
+    </div>
+    <div>
+        <input type="radio" id="pumpkin" name="vegetables" value="pumpkin" checked>
+        <label for="pumpkin">Pumpkin</label>
+    </div>
+    <div>
+        <input type="radio" id="tomatoes" name="vegetables" value="tomatoes">
+        <label for="tomatoes">Tomatoes</label>
+    </div>
+    <br><br>
+    type ="radio" and the same name provied for all inputs, creates this behavior.
+    checked attribute creates default behavior for the input checked
+
+    // checkboxes
+
+    checkboxes same as radio behavior. useful even when single input or when making multiple choices
+    <br><br>
+    <h1>Favorite french car</h1>
+
+    <div>
+        <input type="checkbox" id="peugeot" name="cars" value="peugeot" checked>
+        <label for="peugeot">Peugeot</label>
+    </div>
+    <div>
+        <input type="checkbox" id="renault" name="cars" value="renault">
+        <label for="renault">Renault</label>
+    </div>
+    <div>
+        <input type="checkbox" id="citroen" name="cars" value="citroen">
+        <label for="citroen">Citroen</label>
+    </div>
+
+    <br><br>
+
+
+    // Buttons
+
+    there are a special buttons for forms - submit buttons and reset buttons
+    <br><br>
+    <button type="submit">Click me to submit form!</button> - submits form to server
+
+    <button type="reset">CLick me to reset form!</button> - resets form
+
+
+    // Organizing form elements
+
+    HTML has a couple of elements allowing us group related form inputs
+
+    // fieldtest element
+
+    allows us to group related form inputs into one logical unit:
+
+    <br><br>
+    <fieldset>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name">
+
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name">
+    </fieldset>
+
+    // legend
+
+    another useful element to describe form by giving data a heading or caption:
+
+    <br><br>
+    <fieldset>
+        <legend>Provide yur personal info to open a credit line</legend>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name">
+
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name">
+
+        <label for="email_address">Email address</label>
+        <input type="email" id="email" name="email">
+    </fieldset>
+
+
 
 </body>
 
