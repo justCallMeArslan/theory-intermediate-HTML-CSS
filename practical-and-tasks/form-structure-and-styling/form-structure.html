@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form structure</title>
+
+    <style>
+        h1 {
+            margin-top: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 400px;
+            padding: 1em;
+            border: 1px solid #cccccc;
+            border-radius: 1em;
+        }
+
+        label span {
+            display: inline-block;
+            text-align: right;
+        }
+
+        input,
+        fieldset {
+            font: 1em sans-serif;
+            width: 250px;
+            box-sizing: border-box;
+            border: 1px solid #999999;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: auto;
+            border: none;
+        }
+
+        input:focus {
+            background-color: yellow;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+
+        label {
+            display: inline-block;
+        }
+
+        div label {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="https://httpbin.org/post" method="post">
+
+        <h1>Payment form</h1>
+        <p>Please complete all required (*) fields</p>
+
+        <section>
+            <h2>Contact information</h2>
+            <fieldset>
+                <legend>Nickname</legend>
+                <ul>
+                    <li>
+                        <label for="nickname_1">
+                            <input type="radio" id="nickname_1" name="nickname" value="Freddy">
+                            FreddyTheBoozmer
+                        </label>
+                    </li>
+                    <li>
+                        <label for="nickname_1">
+                            <input type="radio" id="nickname_1" name="nickname" value="Bobby">
+                            BobbyTheTrashcanman
+                        </label>
+                    </li>
+                    <li>
+                        <label for="nickname_1">
+                            <input type="radio" id="nickname_1" name="nickname" value="Johnny">
+                            JohnnyTheCuttiePattootie
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            <div>
+                <label for="name">Name *:</label>
+                <input type="text" id="name" name="user_name" required>
+            </div>
+            <div>
+                <label for="pass">Password *:</label>
+                <input type="password" id="pass" name="user_pass" required>
+            </div>
+            <div>
+                <label for="email">Email *:</label>
+                <input type="email" id="email" name="user_email" required>
+            </div>
+        </section>
+        <section>
+            <h2>Payment information</h2>
+            <div>
+                <label for="card"> <span>Card type:</span></label>
+                <select name="user_card" id="card">
+                    <option value="visa">Visa</option>
+                    <option value="mc">Master Card</option>
+                    <option value="amex">American Express</option>
+                    <option value="mir">Mir</option>
+                </select>
+            </div>
+            <div>
+                <label for="number">Card number *:</label>
+                <input type="tel" id="number" name="card_number" required>
+            </div>
+            <div>
+                <label for="expiraton">Expiration date *:</label>
+                <input type="tel" id="expiraton" name="expiraton" required placeholder="MM/YY" pattern="[0-9]*">
+            </div>
+        </section>
+        <section>
+            <div>
+                <button type="submit">
+                    Proceed with payment
+                </button>
+            </div>
+        </section>
+
+    </form>
+
+</body>
+
+</html>
