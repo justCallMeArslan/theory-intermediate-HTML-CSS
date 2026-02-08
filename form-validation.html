@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>Form validation</title>
+
+    Methods of validation:
+
+    HTML validation:
+    - required attribute makes innput to be mandatory filled,
+    - minlegth (doesnt imply required) is min length of characters,
+    - maxlength (doesnt imply required) is max length of characters,
+    - min is minimum value regulator,
+    - max is maximum value regulator
+    - pattern is used to control validaion by RegExp value (only available for input)
+
+    CSS validaion:
+
+    - :valid and :invalid when input data correct (:valid) and wrong (:invalid)
+
+    Client-side validation is a nicety which can prevent common data-entry errors before an app
+    wastes time and bandwidth sending data to a server. It’s not a substitute for server-side
+    validation!
+
+    Always sanitize data server-side. Not every request will come from a browser. Even when it does,
+    there’s no guarantee the browser validated the data. Anyone who knows how to open a browser’s
+    developer tools can also bypass your lovingly crafted HTML and JavaScript.
+
     
+</head>
+
+<body>
+
 </body>
+
 </html>
