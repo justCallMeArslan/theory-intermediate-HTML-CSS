@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Grid Elements</title>
+</head>
+
+<body>
+    // Positioning
+
+    Lets take an example of positioning by creating mock floor plan for appartment. <br><br>
+
+
+    <div class="container">
+        <div class="room" id="living-room">Living Room</div>
+        <div class="room" id="kitchen">Kitchen</div>
+        <div class="room" id="bedroom">Bedroom</div>
+        <div class="room" id="bathroom">Bathroom</div>
+        <div class="room" id="closet">Closet</div>
+
+
+    </div>
+
+    <!-- <style>
+        .container {
+            display: inline-grid;
+            grid-template: 80px 80px 80px 80px 80px/ 80px 80px 80px 80px 80px;
+            background-color: aliceblue;
+        }
+
+        .room {
+            border: 1px solid;
+            font-size: 50%;
+            text-align: center;
+        }
+
+        #living-room {
+            /* using start and end as corresponding postitions for elemnt #living-room */
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        #kitchen {
+            grid-row-start: 3;
+            grid-row-end: 6;
+        }
+
+        #bedroom {
+            grid-column-start: 2;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 5;
+        }
+
+        #bathroom {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        #closet {
+            grid-column-start: 4;
+            grid-column-end: 6;
+        }
+
+    </style> -->
+    <br><br>
+
+    absolutely the same example of positioning but using only words, instead of
+    start and end
+
+    <br><br>
+
+    <style>
+        .container {
+            display: inline-grid;
+            grid-template: 80px 80px 80px 80px 80px/ 80px 80px 80px 80px 80px;
+            background-color: aliceblue;
+
+            grid-template-areas:
+                "living-room living-room living-room living-room living-room"
+                "living-room living-room living-room living-room living-room"
+                "kitchen bedroom bedroom bedroom bedroom"
+                "kitchen bedroom bedroom bedroom bedroom"
+                "kitchen bathroom bathroom closet closet"
+            ;
+        }
+
+        .room {
+            border: 1px solid;
+            font-size: 50%;
+            text-align: center;
+        }
+
+
+
+        #living-room {
+            grid-area: living-room;
+        }
+
+        #kitchen {
+            grid-area: kitchen;
+        }
+
+        #bedroom {
+            grid-area: bedroom;
+        }
+
+        #bathroom {
+            grid-area: bathroom;
+        }
+
+        #closet {
+            grid-area: closet;
+        }
+    </style>
+
+</body>
+
+</html>
